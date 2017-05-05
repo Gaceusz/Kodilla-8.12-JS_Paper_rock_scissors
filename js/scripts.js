@@ -23,7 +23,7 @@ var newGameElem = document.getElementById('js-newGameElement'),
     resultsElem = document.getElementById('js-resultsTableElement');
 
 function setGameElements() {
-  switch(gameState) {
+    switch(gameState) {
     case 'started':
         newGameElem.style.display = 'none';
         pickElem.style.display = 'block';
@@ -36,7 +36,7 @@ function setGameElements() {
         newGameElem.style.display = 'block';
         pickElem.style.display = 'none';
         resultsElem.style.display = 'none';
-  }
+    }
 }
 
 setGameElements();
@@ -54,16 +54,15 @@ function setGamePoints() {
 }
 
 function newGame() {
-  player.name = prompt('Graczu, wpisz swoje imię', 'imię gracza');
-  if (player.name) {
-    player.score = computer.score = 0;
-    gameState = 'started';
-    setGameElements();
+    player.name = prompt('Graczu, wpisz swoje imię', 'imię gracza');
+    if (player.name) {
+        player.score = computer.score = 0;
+        gameState = 'started';
+        setGameElements();
 
-    playerNameElem.innerHTML = player.name;
-    setGamePoints();
-  }
-
+        playerNameElem.innerHTML = player.name;
+        setGamePoints();
+    }
 }
 
 alert("Gra trwa do 7 zwycięstw");
@@ -119,11 +118,10 @@ function endGame () {
     if (player.score == 7) {
         gameWinnerIs = 'player'; 
         alert("Koniec Gry. Wygrał gracz " + player.name);
-        gameState = 'ended';
-        
-}   else if (computer.score == 7) {
+        gameState = 'ended';       
+    }   else if (computer.score == 7) {
         gameWinnerIs = 'computer';
         gameState = 'ended';
         alert("Koniec Gry. Wygrał komputer");
-}
+    }
 }
